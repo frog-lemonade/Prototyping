@@ -41,6 +41,14 @@ public class @DefaultControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Hold"",
+                    ""type"": ""Button"",
+                    ""id"": ""8a23f21f-fe0e-4dcc-b3d4-9c869d2d659a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -175,6 +183,17 @@ public class @DefaultControls : IInputActionCollection, IDisposable
                     ""action"": ""MovementP1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e65ec3d0-7e9a-47d9-9a35-8fc326bb5904"",
+                    ""path"": ""<Keyboard>/rightShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -186,6 +205,7 @@ public class @DefaultControls : IInputActionCollection, IDisposable
         m_BasicControlsP1_MovementP1 = m_BasicControlsP1.FindAction("MovementP1", throwIfNotFound: true);
         m_BasicControlsP1_Camera = m_BasicControlsP1.FindAction("Camera", throwIfNotFound: true);
         m_BasicControlsP1_MovementP2 = m_BasicControlsP1.FindAction("MovementP2", throwIfNotFound: true);
+        m_BasicControlsP1_Hold = m_BasicControlsP1.FindAction("Hold", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -238,6 +258,7 @@ public class @DefaultControls : IInputActionCollection, IDisposable
     private readonly InputAction m_BasicControlsP1_MovementP1;
     private readonly InputAction m_BasicControlsP1_Camera;
     private readonly InputAction m_BasicControlsP1_MovementP2;
+    private readonly InputAction m_BasicControlsP1_Hold;
     public struct BasicControlsP1Actions
     {
         private @DefaultControls m_Wrapper;
@@ -245,6 +266,7 @@ public class @DefaultControls : IInputActionCollection, IDisposable
         public InputAction @MovementP1 => m_Wrapper.m_BasicControlsP1_MovementP1;
         public InputAction @Camera => m_Wrapper.m_BasicControlsP1_Camera;
         public InputAction @MovementP2 => m_Wrapper.m_BasicControlsP1_MovementP2;
+        public InputAction @Hold => m_Wrapper.m_BasicControlsP1_Hold;
         public InputActionMap Get() { return m_Wrapper.m_BasicControlsP1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -263,6 +285,9 @@ public class @DefaultControls : IInputActionCollection, IDisposable
                 @MovementP2.started -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnMovementP2;
                 @MovementP2.performed -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnMovementP2;
                 @MovementP2.canceled -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnMovementP2;
+                @Hold.started -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnHold;
+                @Hold.performed -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnHold;
+                @Hold.canceled -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnHold;
             }
             m_Wrapper.m_BasicControlsP1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -276,6 +301,9 @@ public class @DefaultControls : IInputActionCollection, IDisposable
                 @MovementP2.started += instance.OnMovementP2;
                 @MovementP2.performed += instance.OnMovementP2;
                 @MovementP2.canceled += instance.OnMovementP2;
+                @Hold.started += instance.OnHold;
+                @Hold.performed += instance.OnHold;
+                @Hold.canceled += instance.OnHold;
             }
         }
     }
@@ -285,5 +313,6 @@ public class @DefaultControls : IInputActionCollection, IDisposable
         void OnMovementP1(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);
         void OnMovementP2(InputAction.CallbackContext context);
+        void OnHold(InputAction.CallbackContext context);
     }
 }

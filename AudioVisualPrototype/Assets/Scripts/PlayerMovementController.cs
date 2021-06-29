@@ -28,7 +28,7 @@ public class PlayerMovementController : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
+    { 
         if(!charController.isGrounded)
         {
             moveDirY -= gravity * Time.deltaTime;
