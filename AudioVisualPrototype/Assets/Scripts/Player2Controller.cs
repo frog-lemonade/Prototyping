@@ -16,6 +16,8 @@ public class Player2Controller : MonoBehaviour
     public bool sideScroll = true;
 
     private bool isBeingHeld = false;
+
+    public float jumpHeight = 5f;
     private void Awake() {
 
         charController = GetComponent<CharacterController>();
@@ -38,11 +40,11 @@ public class Player2Controller : MonoBehaviour
             }
             if(sideScroll)
             {
-                moveDirection = horizMovement * Vector3.right;
                 if(vertMovement > 0 && charController.isGrounded)
                 {
-                    moveDirection += vertMovement * Vector3.up;
+                    moveDirY += vertMovement * jumpHeight;
                 }
+                moveDirection = horizMovement * Vector3.right + new Vector3(0, moveDirY, 0);
                 transform.eulerAngles = new Vector3(0, Mathf.Round(horizMovement) * 90, 0f);
                 charController.Move(moveDirection * walkSpeed * Time.deltaTime);
             }
