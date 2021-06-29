@@ -7,13 +7,14 @@ public class HugController : MonoBehaviour
     bool canHoldPlayer = false;
 
     GameObject otherPlayer;
+    Transform prevParent = null;
 
     DefaultControls _controlScheme;
     // Start is called before the first frame update
     void Awake()
     {
         _controlScheme = SceneLoadSetup.instance._controlScheme;
-        _controlScheme.BasicControlsP1.MovementP1.performed += hug => AttemptHug();
+        _controlScheme.BasicControlsP1.Hold.performed += hug => AttemptHug();
     }
 
     // Update is called once per frame
@@ -26,8 +27,19 @@ public class HugController : MonoBehaviour
     {
         if(canHoldPlayer)
         {
-            otherPlayer.transform.parent = this.transform;
-            otherPlayer.GetComponent<Player2Controller>().SetHold(true);
+            if(!otherPlayer.GetComponent<Player2Controller>().GetHeld())
+            {
+                prevParent = otherPlayer.transform.parent;
+                otherPlayer.transform.parent = this.transform;
+                otherPlayer.GetComponent<Player2Controller>().SetHold(true);
+            }
+            else
+            {
+                otherPlayer.transform.parent = prevParent;
+                otherPlayer.GetComponent<Player2Controller>().SetHold(false);
+                prevParent = null;
+            }
+
         }
     }
 
