@@ -23,13 +23,13 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         pmController = transform.parent.GetComponentInChildren<PlayerMovementController>();
-        pmController._controlScheme.BasicControlsP1.Camera.performed += look =>
+        SceneLoadSetup.instance._controlScheme.BasicControlsP1.Camera.performed += look =>
         {
             inX = look.ReadValue<Vector2>().x;
             inY = look.ReadValue<Vector2>().y;
         };
 
-        pmController._controlScheme.BasicControlsP1.Camera.canceled += look =>
+        SceneLoadSetup.instance._controlScheme.BasicControlsP1.Camera.canceled += look =>
         {
             inX = 0f;
             inY = 0f;

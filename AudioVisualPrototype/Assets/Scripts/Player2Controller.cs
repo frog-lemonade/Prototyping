@@ -17,11 +17,11 @@ public class Player2Controller : MonoBehaviour
     private void Awake() {
 
         charController = GetComponent<CharacterController>();
+        _controlScheme = SceneLoadSetup.instance._controlScheme;
     }
 
     void Start()
     {
-        _controlScheme = FindObjectOfType<PlayerMovementController>()._controlScheme;
         _controlScheme.BasicControlsP1.MovementP2.performed += cont => HandleMoveInput(cont.ReadValue<Vector2>());
         _controlScheme.BasicControlsP1.MovementP2.canceled += cont => HandleMoveInput(Vector2.zero);
     }

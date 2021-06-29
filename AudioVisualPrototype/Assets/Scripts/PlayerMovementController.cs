@@ -17,14 +17,12 @@ public class PlayerMovementController : MonoBehaviour
     public bool sideScroll = true;
     private void Awake() {
         charController = GetComponent<CharacterController>();
-        _controlScheme = new DefaultControls();
 
-        _controlScheme.BasicControlsP1.Enable();
         //camController = transform.parent.GetComponentInChildren<CameraController>();
     }
 
     void Start()
-    {
+    {   _controlScheme = SceneLoadSetup.instance._controlScheme;
         _controlScheme.BasicControlsP1.MovementP1.performed += cont => HandleMoveInput(cont.ReadValue<Vector2>());
         _controlScheme.BasicControlsP1.MovementP1.canceled += cont => HandleMoveInput(Vector2.zero);
     }
