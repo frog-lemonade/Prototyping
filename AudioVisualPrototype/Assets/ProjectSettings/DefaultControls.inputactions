@@ -6,9 +6,25 @@
             "id": "56055e31-bd55-4059-9800-89528ad9f72a",
             "actions": [
                 {
-                    "name": "Movement",
+                    "name": "MovementP1",
                     "type": "Value",
                     "id": "b9c88a25-b978-4497-aff4-acca53260aec",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Camera",
+                    "type": "Value",
+                    "id": "af7b5889-7d72-4ac1-8d49-3acd1887a92c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MovementP2",
+                    "type": "Value",
+                    "id": "0d2fdaf7-ea42-431f-b797-0a6af2d6cb66",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
@@ -16,13 +32,35 @@
             ],
             "bindings": [
                 {
+                    "name": "",
+                    "id": "11c6c483-8b44-42b3-94c4-3c8b8f79e6c4",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bc7f6834-3184-402e-9ffd-d334795715a0",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "2D Vector",
                     "id": "49d8e9fd-f9ca-44ab-b6ea-3c969ebb4d9a",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "MovementP2",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -33,7 +71,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "MovementP2",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -44,7 +82,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "MovementP2",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -55,7 +93,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "MovementP2",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -66,36 +104,64 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "MovementP2",
                     "isComposite": false,
                     "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "BasicControlsP2",
-            "id": "1cc36baa-17ab-440a-9f2f-28104435aa50",
-            "actions": [
+                },
                 {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "d7910e9b-7e3b-4f99-b732-dcb0606115d7",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "045ee7ed-d5c0-47fc-acd4-1d39f7934861",
-                    "path": "",
+                    "name": "2D Vector",
+                    "id": "f7724035-516a-48ba-8e64-c355f4a329ad",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
+                    "action": "MovementP1",
+                    "isComposite": true,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "76a6c8bb-b4c4-45f7-a949-fe302f835a96",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovementP1",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "33027fbb-8a77-4c55-b47a-9290c0722798",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovementP1",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "11ed55ec-48e2-425e-a65b-dae0822578bb",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovementP1",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "901b32df-c4e3-4b27-9af3-912797c076c0",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovementP1",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
