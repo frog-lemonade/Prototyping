@@ -11,7 +11,7 @@ public class HugController : MonoBehaviour
 
     DefaultControls _controlScheme;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         _controlScheme = SceneLoadSetup.instance._controlScheme;
         _controlScheme.BasicControlsP1.Hold.performed += hug => AttemptHug();
