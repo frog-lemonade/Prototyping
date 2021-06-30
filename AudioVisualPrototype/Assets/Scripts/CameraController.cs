@@ -47,15 +47,25 @@ public class CameraController : MonoBehaviour
         // rotate game objects accordingly
         //transform.eulerAngles = new Vector3(-rotationX, rotationY, 0);
         if(pmController.sideScroll)
-            transform.position = new Vector3(pmController.transform.position.x, pmController.transform.position.y, this.transform.position.z);
+            transform.position = new Vector3(pmController.transform.position.x, pmController.transform.position.y, -10f);
         else
             this.transform.position = new Vector3(pmController.transform.position.x, pmController.transform.position.y + 10f, 0f);
     }
 
-    public void SwapCameraToTop()
+    public void SwapCamera()
     {
-        pmController.sideScroll = false;
-        this.transform.position = new Vector3(pmController.transform.position.x, pmController.transform.position.y + 10f, 0f);
-        this.transform.eulerAngles = new Vector3(90f, 90f, 0f);
+        if(pmController.sideScroll)
+        {
+            pmController.sideScroll = false;
+            this.transform.position = new Vector3(pmController.transform.position.x, pmController.transform.position.y + 10f, 0f);
+            this.transform.eulerAngles = new Vector3(90f, 90f, 0f);
+        }
+        else
+        {
+            pmController.sideScroll = true;
+            this.transform.position = new Vector3(pmController.transform.position.x, pmController.transform.position.y, -10f);
+            this.transform.eulerAngles = new Vector3(0f, 0f, 0f);
+        }
+
     }
 }

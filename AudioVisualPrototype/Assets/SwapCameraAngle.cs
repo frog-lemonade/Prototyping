@@ -8,7 +8,8 @@ public class SwapCameraAngle : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("SeeingPlayer"))
         {
-            cam.GetComponent<CameraController>().SwapCameraToTop();
+            cam.GetComponent<CameraController>().SwapCamera();
+            this.gameObject.SetActive(false);
         }
     }
 }
