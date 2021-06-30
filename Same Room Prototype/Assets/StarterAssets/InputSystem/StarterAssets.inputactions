@@ -36,6 +36,14 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Switch",
+                    "type": "Button",
+                    "id": "9fb522c3-cc5b-4dd0-beee-2ba4ff59d134",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -100,7 +108,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard2",
+                    "groups": "KeyboardMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -111,7 +119,7 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard2",
+                    "groups": "KeyboardMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -122,7 +130,7 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard2",
+                    "groups": "KeyboardMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -133,7 +141,7 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard2",
+                    "groups": "KeyboardMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -184,17 +192,6 @@
                 },
                 {
                     "name": "",
-                    "id": "b06cc4e9-c099-4b24-abaf-c5df4b5ceb7b",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard2",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "9f973413-5e27-4239-acee-38c4a63feeba",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -221,7 +218,7 @@
                     "path": "<Keyboard>/rightShift",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard2",
+                    "groups": "KeyboardMouse",
                     "action": "Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -234,6 +231,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9b0ee1c9-e7f7-4d54-9626-365423b4644a",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d250aaff-0118-49ac-ab5c-ab9a237e390b",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Switch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -282,17 +301,6 @@
             "name": "PS4 Controller",
             "bindingGroup": "PS4 Controller",
             "devices": []
-        },
-        {
-            "name": "Keyboard2",
-            "bindingGroup": "Keyboard2",
-            "devices": [
-                {
-                    "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
         }
     ]
 }
