@@ -20,6 +20,8 @@ public class PrototypeManager : MonoBehaviour
         ChangeWorld(true);
     }
 
+
+
     public void OnSwitch() => ChangeWorld(!_isWorldOneActive);
 
     void ChangeWorld(bool isWorldOneActive) {
@@ -28,10 +30,12 @@ public class PrototypeManager : MonoBehaviour
         if (_isWorldOneActive) {
             //P1.input.SwitchCurrentControlScheme("KeyboardMouse");
             P1.player.transform.localPosition = P2.player.transform.localPosition;
+            P1.player.transform.rotation = P2.player.transform.rotation;
             P2.player.SendMessage("MoveInput", Vector2.zero);
         } else {
             //P2.input.SwitchCurrentControlScheme("KeyboardMouse");
             P2.player.transform.localPosition = P1.player.transform.localPosition;
+            P2.player.transform.rotation = P1.player.transform.rotation;
             P1.player.SendMessage("MoveInput", Vector2.zero);
         }
 
