@@ -36,6 +36,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "HearingPlayerPing",
+                    "type": "Button",
+                    "id": "71bddc4a-cdbf-40f2-abd7-f73512d17405",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SeeingPlayerPing",
+                    "type": "Button",
+                    "id": "4001ae6a-1d36-411e-abd6-5c8cd5a6fdd9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -179,6 +195,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Hold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d843c925-d6a5-4372-b66a-749e134b76ae",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HearingPlayerPing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0742cdb-2d0f-4d54-8862-b76d1c328aff",
+                    "path": "<Keyboard>/rightCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SeeingPlayerPing",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

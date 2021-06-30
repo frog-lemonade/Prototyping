@@ -17,6 +17,12 @@ public class PlayerMovementController : MonoBehaviour
     public bool sideScroll = true;
 
     public float jumpHeight = 5f;
+
+    AudioSource audioSource;
+
+    //THIS is sloppy, change this 
+    public GameObject otherPlayer;
+
     private void Awake() {
         charController = GetComponent<CharacterController>();
 
@@ -27,6 +33,23 @@ public class PlayerMovementController : MonoBehaviour
     {   _controlScheme = SceneLoadSetup.instance._controlScheme;
         _controlScheme.BasicControlsP1.MovementP1.performed += cont => HandleMoveInput(cont.ReadValue<Vector2>());
         _controlScheme.BasicControlsP1.MovementP1.canceled += cont => HandleMoveInput(Vector2.zero);
+
+        _controlScheme.BasicControlsP1.SeeingPlayerPing.performed += ping => AudioPing();
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    void AudioPing()
+    {
+        if(!audioSource.isPlaying)
+        {
+            float relativePos = this.transform.position.x - otherPlayer.transform.position.x;
+            if(relativePos > 0)
+                relativePos = 1;
+            else if (relativePos < 0)
+                relativePos = -1;
+            audioSource.panStereo = relativePos;
+            audioSource.Play();
+        }
     }
 
     void FixedUpdate()

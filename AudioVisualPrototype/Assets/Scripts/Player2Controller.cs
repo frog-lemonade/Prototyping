@@ -18,6 +18,8 @@ public class Player2Controller : MonoBehaviour
     private bool isBeingHeld = false;
 
     public float jumpHeight = 5f;
+
+    ParticleSystem pingSystem;
     private void Awake() {
 
         charController = GetComponent<CharacterController>();
@@ -28,6 +30,15 @@ public class Player2Controller : MonoBehaviour
     {
         _controlScheme.BasicControlsP1.MovementP2.performed += cont => HandleMoveInput(cont.ReadValue<Vector2>());
         _controlScheme.BasicControlsP1.MovementP2.canceled += cont => HandleMoveInput(Vector2.zero);
+
+        _controlScheme.BasicControlsP1.HearingPlayerPing.performed += ping => ParticlePing();
+        pingSystem = GetComponent<ParticleSystem>();
+    }
+
+    void ParticlePing()
+    {
+        if(!pingSystem.isPlaying)
+            pingSystem.Play();
     }
 
     void FixedUpdate()

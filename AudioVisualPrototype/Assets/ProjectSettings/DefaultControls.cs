@@ -49,6 +49,22 @@ public class @DefaultControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""HearingPlayerPing"",
+                    ""type"": ""Button"",
+                    ""id"": ""71bddc4a-cdbf-40f2-abd7-f73512d17405"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SeeingPlayerPing"",
+                    ""type"": ""Button"",
+                    ""id"": ""4001ae6a-1d36-411e-abd6-5c8cd5a6fdd9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -194,6 +210,28 @@ public class @DefaultControls : IInputActionCollection, IDisposable
                     ""action"": ""Hold"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d843c925-d6a5-4372-b66a-749e134b76ae"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HearingPlayerPing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a0742cdb-2d0f-4d54-8862-b76d1c328aff"",
+                    ""path"": ""<Keyboard>/rightCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SeeingPlayerPing"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -206,6 +244,8 @@ public class @DefaultControls : IInputActionCollection, IDisposable
         m_BasicControlsP1_Camera = m_BasicControlsP1.FindAction("Camera", throwIfNotFound: true);
         m_BasicControlsP1_MovementP2 = m_BasicControlsP1.FindAction("MovementP2", throwIfNotFound: true);
         m_BasicControlsP1_Hold = m_BasicControlsP1.FindAction("Hold", throwIfNotFound: true);
+        m_BasicControlsP1_HearingPlayerPing = m_BasicControlsP1.FindAction("HearingPlayerPing", throwIfNotFound: true);
+        m_BasicControlsP1_SeeingPlayerPing = m_BasicControlsP1.FindAction("SeeingPlayerPing", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -259,6 +299,8 @@ public class @DefaultControls : IInputActionCollection, IDisposable
     private readonly InputAction m_BasicControlsP1_Camera;
     private readonly InputAction m_BasicControlsP1_MovementP2;
     private readonly InputAction m_BasicControlsP1_Hold;
+    private readonly InputAction m_BasicControlsP1_HearingPlayerPing;
+    private readonly InputAction m_BasicControlsP1_SeeingPlayerPing;
     public struct BasicControlsP1Actions
     {
         private @DefaultControls m_Wrapper;
@@ -267,6 +309,8 @@ public class @DefaultControls : IInputActionCollection, IDisposable
         public InputAction @Camera => m_Wrapper.m_BasicControlsP1_Camera;
         public InputAction @MovementP2 => m_Wrapper.m_BasicControlsP1_MovementP2;
         public InputAction @Hold => m_Wrapper.m_BasicControlsP1_Hold;
+        public InputAction @HearingPlayerPing => m_Wrapper.m_BasicControlsP1_HearingPlayerPing;
+        public InputAction @SeeingPlayerPing => m_Wrapper.m_BasicControlsP1_SeeingPlayerPing;
         public InputActionMap Get() { return m_Wrapper.m_BasicControlsP1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -288,6 +332,12 @@ public class @DefaultControls : IInputActionCollection, IDisposable
                 @Hold.started -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnHold;
                 @Hold.performed -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnHold;
                 @Hold.canceled -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnHold;
+                @HearingPlayerPing.started -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnHearingPlayerPing;
+                @HearingPlayerPing.performed -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnHearingPlayerPing;
+                @HearingPlayerPing.canceled -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnHearingPlayerPing;
+                @SeeingPlayerPing.started -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnSeeingPlayerPing;
+                @SeeingPlayerPing.performed -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnSeeingPlayerPing;
+                @SeeingPlayerPing.canceled -= m_Wrapper.m_BasicControlsP1ActionsCallbackInterface.OnSeeingPlayerPing;
             }
             m_Wrapper.m_BasicControlsP1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -304,6 +354,12 @@ public class @DefaultControls : IInputActionCollection, IDisposable
                 @Hold.started += instance.OnHold;
                 @Hold.performed += instance.OnHold;
                 @Hold.canceled += instance.OnHold;
+                @HearingPlayerPing.started += instance.OnHearingPlayerPing;
+                @HearingPlayerPing.performed += instance.OnHearingPlayerPing;
+                @HearingPlayerPing.canceled += instance.OnHearingPlayerPing;
+                @SeeingPlayerPing.started += instance.OnSeeingPlayerPing;
+                @SeeingPlayerPing.performed += instance.OnSeeingPlayerPing;
+                @SeeingPlayerPing.canceled += instance.OnSeeingPlayerPing;
             }
         }
     }
@@ -314,5 +370,7 @@ public class @DefaultControls : IInputActionCollection, IDisposable
         void OnCamera(InputAction.CallbackContext context);
         void OnMovementP2(InputAction.CallbackContext context);
         void OnHold(InputAction.CallbackContext context);
+        void OnHearingPlayerPing(InputAction.CallbackContext context);
+        void OnSeeingPlayerPing(InputAction.CallbackContext context);
     }
 }
