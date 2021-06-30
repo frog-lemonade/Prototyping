@@ -6,6 +6,7 @@ public class SymbolSolution : MonoBehaviour
 {
     bool canSolve = false;
     DefaultControls _controlScheme;
+    public LockedDoor door;
     private void Start() 
     {
         _controlScheme = SceneLoadSetup.instance._controlScheme;
@@ -16,6 +17,7 @@ public class SymbolSolution : MonoBehaviour
     {
         if(canSolve)
         {
+            door.Open();
             Debug.Log("Puzzle solved");
         }
     }

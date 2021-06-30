@@ -46,6 +46,16 @@ public class CameraController : MonoBehaviour
         //rotationX = Mathf.Clamp(rotationX, minimumX, maximumX);
         // rotate game objects accordingly
         //transform.eulerAngles = new Vector3(-rotationX, rotationY, 0);
-        transform.position = new Vector3(pmController.transform.position.x, pmController.transform.position.y, this.transform.position.z);
+        if(pmController.sideScroll)
+            transform.position = new Vector3(pmController.transform.position.x, pmController.transform.position.y, this.transform.position.z);
+        else
+            this.transform.position = new Vector3(pmController.transform.position.x, pmController.transform.position.y + 10f, 0f);
+    }
+
+    public void SwapCameraToTop()
+    {
+        pmController.sideScroll = false;
+        this.transform.position = new Vector3(pmController.transform.position.x, pmController.transform.position.y + 10f, 0f);
+        this.transform.eulerAngles = new Vector3(90f, 90f, 0f);
     }
 }
