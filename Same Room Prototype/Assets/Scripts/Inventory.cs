@@ -6,8 +6,12 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {   
-    List<GameObject> _inventory = new List<GameObject>();
     public Image[] inventoryUI;
+    public Vector3 positionToShow = new Vector3(45, 5, 6);
+    public Vector3 rotationToShow = new Vector3(-90, 0, 0);
+    
+    List<GameObject> _inventory = new List<GameObject>();
+    GameObject _objectShowing;
 
     public void SaveToInventory(GameObject newObject) {
         _inventory.Add(newObject);
@@ -20,6 +24,15 @@ public class Inventory : MonoBehaviour
     }
 
     public void UseObject(GameObject _object) {
-        Debug.Log("Trying to use Object: " + _object.name);
+        //Debug.Log("Trying to use Object: " + _object.name);
+        _object.SetActive(true);
+        _object.transform.position = positionToShow;
+        _object.transform.rotation = Quaternion.Euler(rotationToShow);
+        _objectShowing = _object;
+    }
+
+    public void CloseObject() {
+        if (_objectShowing != null)
+            _objectShowing.SetActive(false);
     }
 }

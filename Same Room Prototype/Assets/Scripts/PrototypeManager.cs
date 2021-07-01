@@ -77,7 +77,7 @@ public class PrototypeManager : MonoBehaviour
             P2.player.SendMessage("OnSprint", value);
     }
 
-    public void OnUse(InputValue vale) {
+    public void OnUse() {
         if (_focus != null)
             _focus.DoAction();
     }
