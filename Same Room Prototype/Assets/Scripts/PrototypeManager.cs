@@ -82,6 +82,10 @@ public class PrototypeManager : MonoBehaviour
             _focus.DoAction();
     }
 
+    public void OnRestart() {
+        GetComponent<Pika.Toolkit.SceneChanger>().LoadScene();
+    }
+
     [System.Serializable]
     public struct PlayerWorldData {
         public GameObject world;
