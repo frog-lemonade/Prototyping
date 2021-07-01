@@ -14,7 +14,9 @@ public class Interactable : MonoBehaviour
         helper.SetActive(false);
     }
 
-    public void DoAction() => action.Invoke();
+    public void DoAction() {
+        action.Invoke();
+    }
 
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {

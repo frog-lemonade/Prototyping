@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class Inventory : MonoBehaviour {
+    public PrototypeManager manager;
+
     public Image[] inventoryUI;
     public Vector3 positionToShow = new Vector3(45, 5, 6);
     public Vector3 rotationToShow = new Vector3(-90, 0, 0);
@@ -19,7 +21,9 @@ public class Inventory : MonoBehaviour {
 
     public void SaveToInventory(GameObject newObject) {
         _inventory.Add(newObject);
+        newObject.transform.SetParent(manager.transform, true);
         newObject.SetActive(false);
+        manager.ChangeFocus(null);
 
         var color = newObject.GetComponent<Renderer>().material.color;
         
