@@ -100,20 +100,36 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 	</div>
 	<tw-storydata name="Detective Card Prototype" startnode="1" creator="Twine" creator-version="2.3.14" ifid="0A696D5A-8B58-4B6E-A7ED-D66EE60AFBFE" zoom="1" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#ui-bar {
 	display: none;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro" tags="" position="888,78" size="100,100">&lt;&lt;set $inventory to []&gt;&gt;\
-&lt;&lt;run $inventory.push(&#39;Card 1&#39;)&gt;&gt;\
-&lt;&lt;set $inventoryc1 to [&#39;Card 2&#39;, &#39;Card 3&#39;, &#39;Card 4&#39;]&gt;&gt;\
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro" tags="" position="887,77" size="100,100">&lt;&lt;set $inventory to []&gt;&gt;\
+&lt;&lt;run $inventory.push(&#39;Dream&#39;)&gt;&gt;\
+&lt;&lt;set $inventoryc1 to [&#39;A Specific Secret&#39;, &#39;Card 3&#39;, &#39;Card 4&#39;]&gt;&gt;\
 &lt;&lt;set $inventoryc2 to [&#39;Card 5&#39;, &#39;Card 6&#39;, &#39;Card 7&#39;]&gt;&gt;\
 &lt;&lt;set $turncount to 0&gt;&gt;\
-This is a super fancy intro.
+The flicker of a spark. The quiet hiss of warming tinder. The humble beginnings of a flame.
 
-[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="2" name="Character1 Main Menu" tags="" position="782,367" size="100,100">Character 1 looks at you, head tilted to the side. 
+The red-orange hues slowly grow, gnawing at the edges of the neatly-stacked pile of logs within the firepit. Hawk&#39;s face (M, 22, stern eyebrows uncomplimentary of the lackadaisical way about his form) flickers in and out of vision as the wind coaxes the flames.
 
-&quot;What can I do for you?&quot;
-&lt;&lt;if $inventory.includes (&#39;Card 1&#39;)&gt;&gt; 
-[[Give card 1]] &lt;&lt;/if&gt;&gt;\
-&lt;&lt;if $inventory.includes (&#39;Card 2&#39;)&gt;&gt; 
-[[Give card 2]] &lt;&lt;/if&gt;&gt;\
+&quot;Just like I was saying! Sometimes, things just need a bit of a spark for them to keep going.&quot;
+
+An exasperated sigh sounds in the darkness. The fire&#39;s flames grow, illuminating Milo (NB, 21, bomber jacket stuffed to the brim with pins, friendly but tired) as they sit on a nearby log with crossed legs.
+
+&quot;It&#39;s been two months, Hawk. This is more than just a slog.&quot;
+
+The flames slowly grow as both heads turn towards you. Hawk rolls his eyes as he waves a hand at the shrinking tinder.
+
+&quot;Just to be clear, I think this is a really stupid idea-&quot;
+
+&quot;-which is why I appreciate you for letting them come along.&quot;
+
+Milo nods their head at you comfortingly as the fire finishes illuminating the screen.
+
+[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="2" name="Character1 Main Menu" tags="" position="783,366" size="100,100">Hawk looks back at you, slightly annoyed. 
+
+&quot;So, what do yoou want to talk about?&quot;
+&lt;&lt;if $inventory.includes (&#39;Dream&#39;)&gt;&gt; 
+[[Give Dream Card|Give card 1]] &lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $inventory.includes (&#39;A Specific Secret&#39;)&gt;&gt; 
+[[Give A Specific Secret|Give card 2]] &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $inventory.includes (&#39;Card 3&#39;)&gt;&gt; 
 [[Give card 3]] &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $inventory.includes (&#39;Card 4&#39;)&gt;&gt; 
@@ -124,10 +140,11 @@ This is a super fancy intro.
 [[Give card 6]] &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $inventory.includes (&#39;Card 7&#39;)&gt;&gt; 
 [[Give card 7]] &lt;&lt;/if&gt;&gt;\
-&lt;&lt;if $inventoryc1.includes (&#39;Card 1&#39;)&gt;&gt; 
-[[Take card 1]] &lt;&lt;/if&gt;&gt;\
-&lt;&lt;if $inventoryc1.includes (&#39;Card 2&#39;)&gt;&gt; 
-[[Take card 2]] &lt;&lt;/if&gt;&gt;\
+
+&lt;&lt;if $inventoryc1.includes (&#39;Dream&#39;)&gt;&gt; 
+[[Take Dream Card|Take card 1]] &lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $inventoryc1.includes (&#39;A Specific Secret&#39;)&gt;&gt; 
+[[Take A Specific Secret|Take card 2]] &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $inventoryc1.includes (&#39;Card 3&#39;)&gt;&gt; 
 [[Take card 3]] &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $inventoryc1.includes (&#39;Card 4&#39;)&gt;&gt; 
@@ -137,13 +154,15 @@ This is a super fancy intro.
 &lt;&lt;if $inventoryc1.includes (&#39;Card 6&#39;)&gt;&gt; 
 [[Take card 6]] &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $inventoryc1.includes (&#39;Card 7&#39;)&gt;&gt; 
-[[Take card 7]] &lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="3" name="Character2 Main Menu" tags="" position="1022,369" size="100,100">Character 1 looks at you, head tilted to the side. 
+[[Take card 7]] &lt;&lt;/if&gt;&gt;\
+
+[[Go Back|Main Menu]]</tw-passagedata><tw-passagedata pid="3" name="Character2 Main Menu" tags="" position="1022,368" size="100,100">Milo looks at you, head slightly tilting to the side. 
 
 &quot;What can I do for you?&quot;
-&lt;&lt;if $inventory.includes (&#39;Card 1&#39;)&gt;&gt; 
-[[Give C2 card 1]] &lt;&lt;/if&gt;&gt;\
-&lt;&lt;if $inventory.includes (&#39;Card 2&#39;)&gt;&gt; 
-[[Give C2 card 2]] &lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $inventory.includes (&#39;Dream&#39;)&gt;&gt; 
+[[Give Dream Card|Give C2 card 1]] &lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $inventory.includes (&#39;A Specific Secret&#39;)&gt;&gt; 
+[[Give A Specific Secret|Give C2 card 2]] &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $inventory.includes (&#39;Card 3&#39;)&gt;&gt; 
 [[Give C2 card 3]] &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $inventory.includes (&#39;Card 4&#39;)&gt;&gt; 
@@ -154,10 +173,11 @@ This is a super fancy intro.
 [[Give C2 card 6]] &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $inventory.includes (&#39;Card 7&#39;)&gt;&gt; 
 [[Give C2 card 7]] &lt;&lt;/if&gt;&gt;\
-&lt;&lt;if $inventoryc2.includes (&#39;Card 1&#39;)&gt;&gt; 
-[[Take C2 card 1]] &lt;&lt;/if&gt;&gt;\
-&lt;&lt;if $inventoryc2.includes (&#39;Card 2&#39;)&gt;&gt; 
-[[Take C2 card 2]] &lt;&lt;/if&gt;&gt;\
+
+&lt;&lt;if $inventoryc2.includes (&#39;Dream&#39;)&gt;&gt; 
+[[Take Dream Card|Take C2 card 1]] &lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $inventoryc2.includes (&#39;A Specific Secret&#39;)&gt;&gt; 
+[[Take A Specific Secret|Take C2 card 2]] &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $inventoryc2.includes (&#39;Card 3&#39;)&gt;&gt; 
 [[Take C2 card 3]] &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $inventoryc2.includes (&#39;Card 4&#39;)&gt;&gt; 
@@ -167,17 +187,25 @@ This is a super fancy intro.
 &lt;&lt;if $inventoryc2.includes (&#39;Card 6&#39;)&gt;&gt; 
 [[Take C2 card 6]] &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $inventoryc2.includes (&#39;Card 7&#39;)&gt;&gt; 
-[[Take C2 card 7]] &lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="4" name="Main Menu" tags="" position="893,225" size="100,100">&lt;&lt;if $turncount == 4&gt;&gt; [[The fire dwindles...]]\
+[[Take C2 card 7]] &lt;&lt;/if&gt;&gt;\
+
+[[Go Back|Main Menu]]</tw-passagedata><tw-passagedata pid="4" name="Main Menu" tags="" position="889,224" size="100,100">Check [[inventory]]
+
+
+&lt;&lt;if $turncount == 4&gt;&gt; [[The fire dwindles...]]\
 &lt;&lt;else&gt;&gt;\
-The fire burns quietly. You look between Character1 and Character2.
+The fire burns quietly. You look between Hawk and Milo.
 
-[[Approach Character1|Character1 Main Menu]]
-[[Approach Character2|Character2 Main Menu]]
+(Approach characters to give and take Cards to learn more about them.
+&quot;Specific&quot; cards are directly linked to an unchanging memory/idea, and will not change as they are given/taken.
+Unlabeled cards will change form as they are given/taken from characters.)
 
-Check [[inventory]]
-&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="5" name="inventory" tags="" position="1774,24" size="100,100">Your inventory has:
+[[Approach Hawk|Character1 Main Menu]]
+[[Approach Milo|Character2 Main Menu]]
 
-&lt;&lt;if $inventory.includes (&#39;Card 1&#39;)&gt;&gt; Bingus
+&lt;&lt;/if&gt;&gt;\</tw-passagedata><tw-passagedata pid="5" name="inventory" tags="" position="1774,25" size="100,100">Your inventory has:
+
+&lt;&lt;if $inventory.includes (&#39;Dream&#39;)&gt;&gt; Dream Card: A lingering dream that never seems to drift away.
 &lt;&lt;elseif $inventory.includes (&#39;Card 2&#39;)&gt;&gt; Bungus
 &lt;&lt;elseif $inventory.includes (&#39;Card 3&#39;)&gt;&gt; Bangus
 &lt;&lt;elseif $inventory.includes (&#39;Card 4&#39;)&gt;&gt; Borugds
@@ -187,14 +215,17 @@ Check [[inventory]]
 &lt;&lt;/if&gt;&gt;
 
 [[Return to Campfire|Main Menu]]</tw-passagedata><tw-passagedata pid="6" name="Give card 1" tags="" position="313,91" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
-&lt;&lt;run $inventoryc1.push(&#39;Card 1&#39;)&gt;&gt;\
-&lt;&lt;run $inventory.delete(&#39;Card 1&#39;)&gt;&gt;\
+&lt;&lt;run $inventoryc1.push(&#39;Dream&#39;)&gt;&gt;\
+&lt;&lt;run $inventory.delete(&#39;Dream&#39;)&gt;&gt;\
+Hawk&#39;s eyes seem to soften as his mind is gradually whisked away...
 
-Bingus has eaten your card.
+As you stare into the card, you can see figures begin to take form. A cherry red convertible lazily lulls around the winding paths of a narrow trail.
+
+Hawk sits in the driver&#39;s seat, his arm curled around Milo&#39;s shoulder. He laughs, and they laugh alongside him. He grins, and they grin back.
 
 [[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="7" name="Give card 2" tags="" position="417,92" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
-&lt;&lt;run $inventoryc1.push(&#39;Card 2&#39;)&gt;&gt;\
-&lt;&lt;run $inventory.delete(&#39;Card 2&#39;)&gt;&gt;\
+&lt;&lt;run $inventoryc1.push(&#39;A Specific Secret&#39;)&gt;&gt;\
+&lt;&lt;run $inventory.delete(&#39;A Specific Secret&#39;)&gt;&gt;\
 
 [[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="8" name="Give card 3" tags="" position="305,197" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc1.push(&#39;Card 3&#39;)&gt;&gt;\
@@ -217,9 +248,14 @@ Bingus has eaten your card.
 &lt;&lt;run $inventory.push(&#39;Card 7&#39;)&gt;&gt;\
 
 
-[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="13" name="Give C2 card 1" tags="" position="1380,115" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
-&lt;&lt;run $inventoryc2.push(&#39;Card 1&#39;)&gt;&gt;\
-&lt;&lt;run $inventory.delete(&#39;Card 1&#39;)&gt;&gt;\
+[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="13" name="Give C2 card 1" tags="" position="1380,114" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
+&lt;&lt;run $inventoryc2.push(&#39;Dream&#39;)&gt;&gt;\
+&lt;&lt;run $inventory.delete(&#39;Dream&#39;)&gt;&gt;\
+Milo&#39;s eyes soften as the soft outlines of a dream embrace their mind...
+
+They sit alone on a couch, eyes turned towards heavy snowfall blanketing the city landscape. 
+
+The door slowly opens, a warm light illuminating the blue hues. Hawk steps in, a soft smile on his face. He sits next to Milo, nothing more. Both sets of eyes turn to gaze out the frosted windowpanes.
 
 [[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="14" name="Give C2 card 2" tags="" position="1485,113" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc2.push(&#39;Card 2&#39;)&gt;&gt;\
@@ -245,13 +281,29 @@ Bingus has eaten your card.
 &lt;&lt;run $inventoryc2.push(&#39;Card 7&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.delete(&#39;Card 7&#39;)&gt;&gt;\
 
-[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="20" name="Take card 1" tags="" position="278,588" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
-&lt;&lt;run $inventoryc1.delete(&#39;Card 1&#39;)&gt;&gt;\
-&lt;&lt;run $inventory.push(&#39;Card 1&#39;)&gt;&gt;\
+[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="20" name="Take card 1" tags="" position="277,588" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
+&lt;&lt;run $inventoryc1.delete(&#39;Dream&#39;)&gt;&gt;\
+&lt;&lt;run $inventory.push(&#39;Dream&#39;)&gt;&gt;\
+Hawk&#39;s eyes seem to dull as visions of a dream fade...
+
+As you stare into the card, you can see figures begin to take form. A cherry red convertible lazily lulls around the winding paths of a narrow trail.
+
+Hawk sits in the driver&#39;s seat, his arm curled around Milo&#39;s shoulder. He laughs, and they laugh alongside him. He grins, and they grin back.
 
 [[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="21" name="Take card 2" tags="" position="384,592" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc1.delete(&#39;Card 2&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.push(&#39;Card 2&#39;)&gt;&gt;\
+You can feel the quickening thrum of Hawk&#39;s heart as he attempts to greedily cling on to the opening secret...
+
+His eyes glance back and forth, the small figure of Milo fading in the distance as the familiar chattering of friends can be heard.
+
+The phone lies illuminated upon the bomber jacket, unlocked.
+
+He picks it up. He quickly scrolls to a name. Jeremy. 
+
+He glances at Milo one last second.
+
+&quot;Are you sure you want to block this contact?&quot;
 
 [[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="22" name="Take card 3" tags="" position="275,697" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc1.delete(&#39;Card 3&#39;)&gt;&gt;\
@@ -273,9 +325,14 @@ Bingus has eaten your card.
 &lt;&lt;run $inventoryc1.push(&#39;Card 7&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.delete(&#39;Card 7&#39;)&gt;&gt;\
 
-[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="27" name="Take C2 card 1" tags="" position="1378,588" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
+[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="27" name="Take C2 card 1" tags="" position="1379,585" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc2.delete(&#39;Card 1&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.push(&#39;Card 1&#39;)&gt;&gt;\
+Milo&#39;s eyes dull as the soft outlines of a dream flee their mind...
+
+They sit alone on a couch, eyes turned towards heavy snowfall blanketing the city landscape. 
+
+The door slowly opens, a warm light illuminating the blue hues. Hawk steps in, a soft smile on his face. He sits next to Milo, nothing more. Both sets of eyes turn to gaze out the frosted windowpanes.
 
 [[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="28" name="Take C2 card 2" tags="" position="1487,583" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc2.delete(&#39;Card 2&#39;)&gt;&gt;\
