@@ -13,6 +13,7 @@ public class PrototypeManager : MonoBehaviour
     public UnityEvent onP2;
 
     bool _isWorldOneActive = true;
+    Interactable _focus;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +21,8 @@ public class PrototypeManager : MonoBehaviour
         ChangeWorld(true);
     }
 
-
-
     public void OnSwitch() => ChangeWorld(!_isWorldOneActive);
+    internal void ChangeFocus(Interactable newFocus) => _focus = newFocus;
 
     void ChangeWorld(bool isWorldOneActive) {
         _isWorldOneActive = isWorldOneActive;
@@ -75,6 +75,11 @@ public class PrototypeManager : MonoBehaviour
             P1.player.SendMessage("OnSprint", value);
         else
             P2.player.SendMessage("OnSprint", value);
+    }
+
+    public void OnUse(InputValue vale) {
+        if (_focus != null)
+            _focus.DoAction();
     }
 
     [System.Serializable]
