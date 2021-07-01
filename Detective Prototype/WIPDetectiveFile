@@ -191,8 +191,10 @@ Milo nods their head at you comfortingly as the fire finishes illuminating the s
 
 [[Go Back|Main Menu]]</tw-passagedata><tw-passagedata pid="4" name="Main Menu" tags="" position="889,224" size="100,100">Check [[inventory]]
 
-
-&lt;&lt;if $turncount == 4&gt;&gt; [[The fire dwindles...]]\
+&lt;&lt;if $turncount == 1&gt;&gt; The night has officially begun.
+&lt;&lt;if $turncount == 2&gt;&gt; The night draws on, and the moon shines bright.
+&lt;&lt;if $turncount == 3&gt;&gt; The night draws on, and the moon shines bright.
+&lt;&lt;if $turncount == 5&gt;&gt; [[The fire dwindles...]]\
 &lt;&lt;else&gt;&gt;\
 The fire burns quietly. You look between Hawk and Milo.
 
@@ -214,7 +216,7 @@ Unlabeled cards will change form as they are given/taken from characters.)
 &lt;&lt;elseif $inventory.includes (&#39;Card 7&#39;)&gt;&gt; Poggers
 &lt;&lt;/if&gt;&gt;
 
-[[Return to Campfire|Main Menu]]</tw-passagedata><tw-passagedata pid="6" name="Give card 1" tags="" position="313,91" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
+[[Return to Campfire|Main Menu]]</tw-passagedata><tw-passagedata pid="6" name="Give card 1" tags="" position="293,96" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc1.push(&#39;Dream&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.delete(&#39;Dream&#39;)&gt;&gt;\
 Hawk&#39;s eyes seem to soften as his mind is gradually whisked away...
@@ -223,23 +225,23 @@ As you stare into the card, you can see figures begin to take form. A cherry red
 
 Hawk sits in the driver&#39;s seat, his arm curled around Milo&#39;s shoulder. He laughs, and they laugh alongside him. He grins, and they grin back.
 
-[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="7" name="Give card 2" tags="" position="417,92" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
+[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="7" name="Give card 2" tags="" position="397,97" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc1.push(&#39;A Specific Secret&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.delete(&#39;A Specific Secret&#39;)&gt;&gt;\
 
-[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="8" name="Give card 3" tags="" position="305,197" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
+[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="8" name="Give card 3" tags="" position="285,202" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc1.push(&#39;Card 3&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.delete(&#39;Card 3&#39;)&gt;&gt;\
 
-[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="9" name="Give card 4" tags="" position="416,200" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
+[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="9" name="Give card 4" tags="" position="396,205" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc1.push(&#39;Card 4&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.delete(&#39;Card 4&#39;)&gt;&gt;\
 
-[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="10" name="Give card 5" tags="" position="311,303" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
+[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="10" name="Give card 5" tags="" position="291,308" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc1.push(&#39;Card 5&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.delete(&#39;Card 5&#39;)&gt;&gt;\
 
-[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="11" name="Give card 6" tags="" position="421,311" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
+[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="11" name="Give card 6" tags="" position="401,316" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc1.push(&#39;Card 6&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.delete(&#39;Card 6&#39;)&gt;&gt;\
 
@@ -321,7 +323,7 @@ He glances at Milo one last second.
 &lt;&lt;run $inventoryc1.delete(&#39;Card 6&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.push(&#39;Card 6&#39;)&gt;&gt;\
 
-[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="26" name="Take card 7" tags="" position="360,417" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
+[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="26" name="Take card 7" tags="" position="340,422" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc1.push(&#39;Card 7&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.delete(&#39;Card 7&#39;)&gt;&gt;\
 
@@ -354,7 +356,7 @@ The door slowly opens, a warm light illuminating the blue hues. Hawk steps in, a
 &lt;&lt;run $inventoryc2.delete(&#39;Card 6&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.push(&#39;Card 6&#39;)&gt;&gt;\
 
-[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="33" name="Take C2 card 7" tags="" position="1444,916" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
+[[Continue|Main Menu]]</tw-passagedata><tw-passagedata pid="33" name="Take C2 card 7" tags="" position="1434,904" size="100,100">&lt;&lt;set $turncount to $turncount + 1&gt;&gt;\
 &lt;&lt;run $inventoryc2.delete(&#39;Card 7&#39;)&gt;&gt;\
 &lt;&lt;run $inventory.push(&#39;Card 7&#39;)&gt;&gt;\
 
